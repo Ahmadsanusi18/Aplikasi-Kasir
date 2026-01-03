@@ -7,9 +7,14 @@
     "icon": "./assets/images/icon.png",
     "scheme": "mykasir",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "Aplikasi ini membutuhkan akses Bluetooth untuk mencetak struk transaksi ke printer thermal.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.sanusii.MyKasir"
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +24,20 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "BLUETOOTH",
+        "BLUETOOTH_ADMIN",
+        "BLUETOOTH_SCAN",
+        "BLUETOOTH_CONNECT",
+        "ACCESS_FINE_LOCATION",
+        "BLUETOOTH",
+        "BLUETOOTH_ADMIN",
+        "BLUETOOTH_SCAN",
+        "BLUETOOTH_CONNECT",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "package": "com.sanusii.MyKasir"
     },
     "web": {
       "output": "static",
@@ -38,11 +56,26 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      "@react-native-community/datetimepicker",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 21
+          }
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "7bc7c328-2376-46a8-b53d-48f90c6d1827"
+      }
     }
   }
 }
